@@ -27,6 +27,10 @@ Application de gestion d'une flotte de véhicule.
 
 ![StartSituation](./Img/StartSituation.PNG)
 
+4) Etudier le diagramme de classe
+
+![Class Diagram](./Img/ClassDiagram.PNG)
+
 ### Moyens à disposition
 
 * Un environnement de développement Visual Studio 2022 Entreprise.
