@@ -17,7 +17,11 @@ namespace Carfleet
         public Person(string name, string firstname, string phonenumber, 
                       string emailaddress, List<string> languages = null)
         {
-            throw new NotImplementedException();
+            _name = name;
+            _firstname = firstname;
+            _phonenumber = phonenumber;
+            _emailaddress = emailaddress;
+            _languages = languages;
         }
 
         public string Name { get => _name;}
@@ -28,13 +32,33 @@ namespace Carfleet
         {
             get
             {
-                throw new NotImplementedException();
+                return _languages;
             }
             set
             {
-                throw new NotImplementedException();
+                foreach(string languageToAdd in value)
+                {
+                    if (!this.DoesLanguageExist(languageToAdd))
+                    {
+                        _languages.Add(languageToAdd);
+                    }
+                }
             }
         }
         #endregion public methods
+
+        #region private methods
+        private bool DoesLanguageExist(string languageToFind)
+        {
+            foreach (string language in _languages)
+            {
+                if (languageToFind == language)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        #endregion private methods
     }
 }
