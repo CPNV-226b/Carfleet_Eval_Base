@@ -15,25 +15,33 @@ namespace Carfleet
                       string emailaddress, string workZone, List<string> languages = null):
                       base(name, firstname, phonenumber, emailaddress, languages)
         {
-            throw new NotImplementedException();
+            _workZone = workZone;
         }
         public string WorkZone { get => _workZone;}
         public Vehicle Vehicle
         {
             get
             {
-                throw new NotImplementedException();
+                return _vehicle;
             }
         }
 
         public void TakeAVehicle(Vehicle vehicle)
         {
-            throw new NotImplementedException();
+            if(_vehicle !=null)
+            {
+                throw new VehicleAlreadyAssignedException();
+            }
+            _vehicle = vehicle;
         }
 
         public void ReleaseAVehicle()
         {
-            throw new NotImplementedException();
+            if(_vehicle == null)
+            {
+                throw new NoVehicleAssignedException();
+            }
+            _vehicle = null;
         }
         #endregion public methods
 
