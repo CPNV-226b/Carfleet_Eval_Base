@@ -12,24 +12,23 @@ namespace Carfleet{
                      string chassisNumber):
                      base(registration, brand, model, chassisNumber)
         {
-            throw new NotImplementedException();
         }
 
         public Boolean IsCarryingGoods
         {
             get
             {
-                throw new NotImplementedException();
+                return _isCarryingGoods;
             }
             set
             {
-                throw new NotImplementedException();
+                _isCarryingGoods = value;
             }
         }
 
         public override string ToString()
         {
-            throw new NotImplementedException();
+            return base.ToString() + " - " + _isCarryingGoods.ToString().ToLower();
         }
         #endregion public methods
     }
